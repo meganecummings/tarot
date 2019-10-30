@@ -35,5 +35,21 @@ def one_card():
 def specific_card(card_url):
     my_deck = cards.get_deck()
     my_card = next((item for item in my_deck if item["url"] == card_url))
-    return render_template
+    return render_template("specific_card.html",       name = my_card['name'], 
+        title = my_card['name'], 
+        meaning = my_card['desc'], 
+        reversed_meaning = my_card['rdesc'], 
+        image = my_card['image'])
 
+# Three Cards Route
+@app.route('/three-cards')
+def more_cards():
+    my_deck = cards.get_deck()
+    hand = []
+    num = 1
+    while num < 4:
+        my_cards = cards.get_cards(my_deck)
+        hand.append(my_card)
+        num += 1
+    return render_template("three_cards.html", hand = hand, title = "Three Card Spread")
+    
