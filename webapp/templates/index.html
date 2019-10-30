@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+<h3>Welcome to Your Personal Tarot Reading</h3>
+
+<p>Are you on the precipice of making a decision about your future? Curious about what the fates have in store? It might be time to consult the Tarot for a personal reading.</p>
+
+<p>Before you begin the process, think deeply about a question you may want answered by the cards. After you focus on the question at hand, use your fingers to select the reading of your choice:</p>
+
+<p><a href="/one-card">Draw 1 Cards: This option draws One Card, providing a single answer to your heart's inquiry</a>
+    <br />(the present)</p>
+
+<p><a href="/three-cards">Draw 3 Random Cards: This option provides 3 different cards in response to your question, selecting a response to the past, present and future. </a>
+    <br />(the past, the present and the future)</p>
+
+<p><a href="/all-cards">Curious about the Cards? This Option lists all the cards in the Tarot</a>
+
+    <hr />
+
+    <p>This is a simple web application written in Python/Flask to draw one or more randomly selected cards from a dictionary (hash) of 72 Tarot card description and image references.</p>
+
+    <p><a href="https://github.com/meganecummings/tarot" _target=blank>The source code to this app is here</a> - please feel free to fork or re-use, there are no license restrictions.</p>
+
+    {% endblock %}

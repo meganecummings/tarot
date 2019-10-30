@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h3>{{ name }}</h3>
+        <p><strong>Card's Meaning:</strong> {{ meaning }}</p>
+        <p><strong>Card's Reversed meaning:</strong> {{ reversed_meaning }}</p>
+        <img src="/static/{{ image }}" />
+    </div>
+</div>
+{% endblock %}
