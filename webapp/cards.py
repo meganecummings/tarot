@@ -1,24 +1,22 @@
 import random
 
-# Routes for Cards
-def shuffle_deck(deck):
-    random.shuffle(deck)
+# does what it says on the tin
+def shuffle_deck(deck) :
+	random.shuffle(deck)
 
-# Pick Individual Card - Call method each time to pull an original card
-def get_cards(deck):
-    num = random.randint(0, len(deck))
-    card = deck[num]
-    # Ensures we remove the pulled card from the deck
-    del(deck[num]) 
-    # Handles reversed Cards in Deck (0 = False; 1 = True)
-    rev = random.randomint(-1,1)
-    # Tuple of Card Dictionary & Reversed Status
-    drawn = (card, rev)
+# pick card(s) - call this method multiple times to draw multiple unique cards from the deck
+def get_cards(deck) :
+	num = random.randint(0, len(deck))
+	card = deck[num]
+	del(deck[num]) # so we don't get the same card twice if we're calling this multipel times for the same hand
+	rev = random.randint(-1,1) # is card reversed? zero (false) or 1 (true)
+	drawn = (card, rev) # tuple of card dictionary + 1 or zero for reversal
+	return drawn
 
-# Array of Dictionaries for Each Pulled Card
+# array of dicts for each card
 def get_deck():
-    deck = [
-        { "name" : "The Fool", "url" : "the_fool", "image" : "images/00.jpg", "desc" : "Immaturity, sincerity, the natural man, a free spirit. One who naturally knows his will and is worry free. A dreamer, careless and disinterested in practical matters. Travel." , "rdesc" : "Folly, failure, madness. Hindered travel." },
+	deck= [
+		{ "name" : "The Fool", "url" : "the_fool", "image" : "images/00.jpg", "desc" : "Immaturity, sincerity, the natural man, a free spirit. One who naturally knows his will and is worry free. A dreamer, careless and disinterested in practical matters. Travel." , "rdesc" : "Folly, failure, madness. Hindered travel." },
 		{ "name" : "The Magician", "url" : "the_magician", "image" : "images/01.jpg" , "desc" : "Will, creativeness, adroitness, mastery, elasticity, autonomy, eloquence, craft, cunning. May imply a new beginning. The Magus is an autonomous person that knows where he is going and how to achieve its ends." , "rdesc" : "Indecision, weak will, ineptitude, dilettante. Deceitfulness, trickery." },
 		{ "name" : "The High Priestess", "url" : "the_high_priestess", "image" : "images/02.jpg" , "desc" : "Hidden influence. Silence, patience, equilibrium. Slow but firm. Pondered decision. Advice, tuition, possibly given by a woman. Psychic ability. The manifestation of the eternal feminine in a spiritual way." , "rdesc" : "Deceptive, secret, or sly manner. Lazyness, intolerance. Delays. False ideas, moodiness, doubt, superficiality." },
 		{ "name" : "The Empress", "url" : "the_empress", "image" : "images/03.jpg" , "desc" : "Understanding, charm, kindness, beauty, pleasure, success, safety, trust. Nurturing, positive development." , "rdesc" : "False appearance, vanity, disdain, frivolity. Sterility. Delays. Careless spending." },
@@ -98,4 +96,7 @@ def get_deck():
 		{ "name" : "Ten of Pentacles", "url" : "ten_of_pentacles", "image" : "images/pe10.jpg" , "desc" : "Wealth. Fulfillment of material fortune. Family matters. Inheritance. House." , "rdesc" : "Family misfortune. Loss of inheritance. Beware of risky projects." },
 	]
 	return deck
-    
+	
+
+
+
